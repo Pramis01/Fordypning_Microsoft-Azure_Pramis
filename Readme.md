@@ -98,3 +98,72 @@ Når en resource group slettes, blir alle ressursene som ligger inni også slett
 ## Refleksjon
 
 Gjennom dette arbeidet har jeg lært grunnleggende bruk av Azure CLI, hvordan jeg kobler til en konto, og hvordan jeg kan opprette, vise og slette ressurser. Dette gir en god forståelse for hvordan man kan administrere skyressurser på en strukturert måte.
+
+## Virtuell maskin (VM)
+
+### Opprettelse av virtuell maskin
+
+Jeg opprettet en virtuell maskin ved hjelp av Azure-portalen i Microsoft Azure. Under opprettelsen valgte jeg et Ubuntu-operativsystem. Prosessen ligner på opprettelse av en vanlig virtuell maskin, hvor man må konfigurere blant annet lagring, nettverk og brukerinformasjon.
+
+Jeg valgte brukernavn og passord som senere ble brukt for innlogging til serveren.
+
+---
+
+### Tilkobling til VM via SSH
+
+Etter at den virtuelle maskinen var opprettet, kopierte jeg den offentlige IP-adressen (Public IP). Denne brukes for å koble til serveren eksternt.
+
+Jeg koblet til VM-en via terminalen ved hjelp av SSH med følgende kommando:
+
+```id="vmssh01"
+ssh Pramis01@20.2.86.50
+```
+
+Her er:
+
+* `Pramis01` brukernavnet jeg opprettet
+* `20.2.86.50` den offentlige IP-adressen til VM-en
+
+Ved første tilkobling måtte jeg bekrefte forbindelsen og deretter skrive inn passordet jeg valgte under opprettelsen.
+
+**Skjermbilde: SSH-tilkobling i terminal **
+![SSH tilkobling i terminal](Bilder/Virtual_Machine/SSH_tilkobling-i-terminal.png)
+
+---
+
+### Oppdatering av system og installasjon av Nginx
+
+Når jeg var koblet til serveren, oppdaterte jeg først pakkelisten for systemet:
+
+```id="vmcmd01"
+sudo apt update
+```
+
+Deretter installerte jeg webserveren Nginx:
+
+```id="vmcmd02"
+sudo apt install nginx -y
+```
+
+Dette installerer og setter opp en enkel webserver på den virtuelle maskinen.
+
+**Skjermbilde: Installasjon av Nginx i terminal**
+![Installsjon av Nginx Server](Bilder/Virtual_Machine/Installing_Nginx_Server.png)
+
+---
+
+### Testing av webserver
+
+Etter installasjonen testet jeg webserveren ved å åpne den offentlige IP-adressen i en nettleser. Hvis installasjonen var vellykket, vises standard Nginx-side.
+
+Dette bekrefter at serveren er tilgjengelig over internett og at webserveren fungerer som forventet.
+
+**Skjermbilde: Nginx standard side i nettleser**
+![Running Nginx Server](Bilder/Virtual_Machine/Running_Nginx_Server.png)
+---
+
+## Refleksjon
+
+Gjennom dette arbeidet har jeg lært hvordan man oppretter og konfigurerer en virtuell maskin i Azure, samt hvordan man kobler til en server ved hjelp av SSH. Jeg har også fått praktisk erfaring med Linux-kommandoer og installasjon av tjenester som Nginx.
+
+Jeg har forstått viktigheten av offentlig IP-adresse for ekstern tilgang, og hvordan en server kan brukes til å levere tjenester over nettverk.
