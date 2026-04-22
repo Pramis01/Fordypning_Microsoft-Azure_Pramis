@@ -99,7 +99,7 @@ Når en resource group slettes, blir alle ressursene som ligger inni også slett
 
 Gjennom dette arbeidet har jeg lært grunnleggende bruk av Azure CLI, hvordan jeg kobler til en konto, og hvordan jeg kan opprette, vise og slette ressurser. Dette gir en god forståelse for hvordan man kan administrere skyressurser på en strukturert måte.
 
-## Virtuell maskin (VM)
+## Azure Fordypningsprosjekt – Fase 1: Virtuell maskin (VM)
 
 ### Opprettelse av virtuell maskin
 
@@ -167,3 +167,71 @@ Dette bekrefter at serveren er tilgjengelig over internett og at webserveren fun
 Gjennom dette arbeidet har jeg lært hvordan man oppretter og konfigurerer en virtuell maskin i Azure, samt hvordan man kobler til en server ved hjelp av SSH. Jeg har også fått praktisk erfaring med Linux-kommandoer og installasjon av tjenester som Nginx.
 
 Jeg har forstått viktigheten av offentlig IP-adresse for ekstern tilgang, og hvordan en server kan brukes til å levere tjenester over nettverk.
+
+# Azure Fordypningsprosjekt – Fase 2: Networking
+
+## Prosjektoversikt
+I denne fasen har jeg jobbet med nettverk (Networking) i Microsoft Azure. Målet var å forstå hvordan trafikk til en virtuell maskin styres ved hjelp av Network Security Groups (NSG), og hvordan regler som Allow og Deny påvirker tilgang til serveren.
+
+---
+
+## Hva jeg har gjort
+
+### 1. Analyse av nettverk til virtuell maskin
+Jeg undersøkte nettverksoppsettet til den virtuelle maskinen i Azure-portalen.
+
+Jeg fant og dokumenterte følgende informasjon:
+- Public IP-adresse
+- Private IP-adresse
+- Virtual Network (VNet)
+- Network Security Group (NSG)
+
+**Skjermbilde: Nettverksinformasjon for VM**  
+![VM nettverksinformasjon](Bilder/Networking/Network_Informasjon.png)
+
+---
+
+### 2. Testing av Allow- og Deny-regel (port 80)
+
+Jeg opprettet og testet inbound regler i Network Security Group (NSG) for å kontrollere trafikk til den virtuelle maskinen.
+
+Først opprettet jeg en **Allow-regel** på port 80 (HTTP), som gjør at webserveren (nginx) er tilgjengelig fra internett via VM sin offentlige IP-adresse.
+
+Deretter opprettet jeg en **Deny-regel** på samme port, som blokkerer all innkommende trafikk. Når denne regelen er aktiv, blir nettsiden utilgjengelig i nettleseren.
+
+Dette viser hvordan NSG fungerer som en brannmur som styrer tilgang til serveren basert på regler og prioritet.
+
+**Skjermopptak: Allow og Deny-regler i NSG (samlet)**  
+Video som viser opprettelse av Allow og Deny rule:
+
+Dette skjermopptaket viser hele prosessen med opprettelse av Allow og Deny-regler i Azure NSG.
+[Åpne video](Bilder/Networking/Making_Allow&Deny_InnboundRules.mov)
+
+---
+
+---
+
+## Hva jeg har lært
+
+I denne fasen har jeg lært:
+
+- Hva et Virtual Network (VNet) er
+- Forskjellen mellom public og private IP-adresser
+- Hvordan Network Security Groups (NSG) fungerer
+- Hvordan inbound rules kontrollerer tilgang til en server
+- Hvordan Allow og Deny påvirker nettverkstrafikk
+- Hvordan prioritet i regler påvirker hvilke regler som gjelder
+
+---
+
+## Refleksjon
+
+Gjennom dette arbeidet har jeg fått en bedre forståelse av hvordan nettverk i skyen fungerer. Jeg har sett i praksis hvordan en server kan være tilgjengelig eller utilgjengelig basert på brannmurregler.
+
+Dette har gitt meg en mer praktisk forståelse av IT-drift og hvordan sikkerhet i nettverk håndteres i Azure.
+
+---
+
+## Konklusjon
+
+Jeg har nå gjennomført grunnleggende networking i Azure og forstått hvordan trafikk til en virtuell maskin kan kontrolleres. Dette er en viktig del av cloud computing og IT-drift.
