@@ -288,9 +288,9 @@ Etter dette kunne filene åpnes via nettleser ved hjelp av URL.
 
 **Skjermbilde: Testing av tilgang til fil**  
 ![Testing av tilgang](Bilder/Storage_Account/No_blob_access.png)
-[Testing av tilgang](Bilder/Storage_Account/Testing_File_Error.png)
-[Testing av tilgang](Bilder/Storage_Account/blob_acces.png)
-[Testing av tilgang](Bilder/Storage_Account/Testing_File_Access.png)
+![Testing av tilgang](Bilder/Storage_Account/Testing_File_Error.png)
+![Testing av tilgang](Bilder/Storage_Account/blob_acces.png)
+![Testing av tilgang](Bilder/Storage_Account/Testing_File_Access.png)
 
 ---
 
