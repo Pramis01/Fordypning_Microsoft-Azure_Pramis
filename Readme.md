@@ -318,3 +318,65 @@ I denne fasen har jeg lært:
 Gjennom denne fasen har jeg fått en bedre forståelse av hvordan data kan lagres i skyen uavhengig av virtuelle maskiner. Jeg har også sett hvordan sikkerhetsinnstillinger påvirker tilgjengeligheten til filer, og hvordan disse må konfigureres riktig.
 
 Dette gir en praktisk forståelse av hvordan cloud storage fungerer i Azure.
+
+# Azure Fordypningsprosjekt – Fase 4: IAM (Identity and Access Management)
+
+### Tilgangsstyring i Azure
+I denne fasen jobbet jeg med IAM (Identity and Access Management) i Microsoft Azure for å forstå hvordan tilgang til ressurser styres.
+
+IAM brukes til å kontrollere hvem som har tilgang til ressurser i Azure, og hva de har lov til å gjøre.
+
+---
+
+### Rollebasert tilgang (RBAC)
+Jeg brukte rollebasert tilgangsstyring (RBAC) på resource group-nivå for å gi tilgang til prosjektet.
+
+**Skjermbilde: IAM oversikt i Azure (Access control - IAM)**  
+![IAM oversikt](Bilder/IAM/iam-overview.png)
+
+---
+
+### Reader-rolle
+Jeg ga en bruker tilgang med **Reader-rollen**.
+
+Reader-rollen gir:
+- Mulighet til å se ressurser
+- Ingen mulighet til å endre eller slette ressurser
+
+Dette er en sikker rolle som brukes for lesetilgang.
+
+**Skjermbilde: Tildeling av Reader-rolle**  
+![Reader rolle](Bilder/IAM/iam-reader-role.png)
+
+---
+
+### Hvordan jeg ga tilgang
+Jeg ga tilgang via Azure-portalen:
+
+- Gikk til Resource Group
+- Åpnet “Access control (IAM)”
+- La til en rolle (Reader)
+- Valgte bruker ( testbruker)
+- Bekreftet tilgang
+
+**Skjermbilde: Legge til rolle i IAM**  
+![Legg til rolle](Bilder/IAM/iam-add-role.png)
+![Legg til rolle](Bilder/IAM/iam-add-role-2.png)
+![Legg til rolle](Bilder/IAM/iam-add-role-3.png)
+![Legg til rolle](Bilder/IAM/iam-add-role-4.png)
+
+---
+
+### Hva jeg har lært
+I denne fasen har jeg lært:
+
+- Hva IAM er i Azure
+- Hvordan tilgang styres med roller
+- Forskjellen mellom Reader og Contributor
+- Hvordan tilgang gis på resource group-nivå
+- Hvor viktig tilgangskontroll er i cloud miljøer
+
+---
+
+### Refleksjon
+Gjennom denne fasen har jeg forstått hvordan tilgangsstyring fungerer i skyen. IAM er en viktig del av sikkerhet i cloud computing, og sikrer at brukere kun har tilgang til det de trenger.
