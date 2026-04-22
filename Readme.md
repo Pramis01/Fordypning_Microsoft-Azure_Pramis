@@ -235,3 +235,86 @@ Dette har gitt meg en mer praktisk forståelse av IT-drift og hvordan sikkerhet 
 ## Konklusjon
 
 Jeg har nå gjennomført grunnleggende networking i Azure og forstått hvordan trafikk til en virtuell maskin kan kontrolleres. Dette er en viktig del av cloud computing og IT-drift.
+
+## Azure Fordypningsprosjekt – Fase 3: Storage i Azure (Blob Storage)
+
+### Opprettelse av Storage Account
+I denne fasen opprettet jeg en Storage Account i Microsoft Azure for å lagre filer i skyen. Jeg brukte samme resource group som tidligere og valgte region North Europe.
+
+En Storage Account er en tjeneste i Azure som brukes til å lagre data som filer, bilder og dokumenter. Den fungerer uavhengig av virtuelle maskiner.
+
+**Skjermbilde: Opprettelse av Storage Account**  
+![Opprettelse av Storage Account](Bilder/Storage_Account/Creating_storage_account.png)
+![Opprettelse av Storage Account](Bilder/Storage_Account/Creating_Storage_account_2.png)
+![Opprettelse av Storage Account](Bilder/Storage_Account/Creating_storage_account_3.png)
+
+---
+
+### Opprettelse av Blob Container
+Etter at Storage Account var opprettet, opprettet jeg en container for lagring av filer.
+
+- Navn: files  
+- Tilgangsnivå: Private (standard)
+
+En Blob Container fungerer som en mappe hvor filer (blobs) lagres i skyen.
+
+**Skjermbilde: Opprettelse av container**  
+![Opprettelse av container](Bilder/Storage_Account/Creating_Container.png)
+![Opprettelse av container](Bilder/Storage_Account/Creating_Container_2.png)
+
+---
+
+### Opplasting av filer
+Jeg lastet opp bilder til containeren ved hjelp av Azure-portalen.
+
+Dette viser hvordan filer kan lagres i skyen uten å være avhengig av lokal lagring eller en virtuell maskin.
+
+**Skjermbilde: Opplasting av filer**  
+![Opplasting av filer](Bilder/Storage_Account/Uploading_files.png)
+![Opplasting av filer](Bilder/Storage_Account/Uploading_Files_2.png)
+
+---
+
+### Testing av tilgang
+Jeg testet tilgang ved å åpne filens URL i nettleseren. Først fikk jeg en feilmelding fordi offentlig tilgang ikke var tillatt.
+
+Dette skyldes at Azure blokkerer offentlig tilgang som standard av sikkerhetsgrunner.
+
+For å løse dette:
+- Aktiverte jeg "Allow Blob Public Access" på Storage Account  
+- Endret tilgangsnivå på container til "Blob (anonymous read access)"  
+
+Etter dette kunne filene åpnes via nettleser ved hjelp av URL.
+
+**Skjermbilde: Testing av tilgang til fil**  
+![Testing av tilgang](Bilder/Storage_Account/No_blob_access.png)
+[Testing av tilgang](Bilder/Storage_Account/Testing_File_Error.png)
+[Testing av tilgang](Bilder/Storage_Account/blob_acces.png)
+[Testing av tilgang](Bilder/Storage_Account/Testing_File_Access.png)
+
+---
+
+### Forskjell på VM storage og Cloud storage
+
+VM storage er lokal lagring som tilhører den virtuelle maskinen. Denne lagringen brukes av operativsystemet og applikasjoner som kjører på VM-en.
+
+Cloud storage (Blob Storage) brukes til å lagre filer separat fra VM-en. Disse filene kan nås via internett og er ikke knyttet til én spesifikk maskin.
+
+---
+
+### Hva jeg har lært
+I denne fasen har jeg lært:
+
+- Hva en Storage Account er  
+- Hva Blob Storage er  
+- Hvordan Blob Containers brukes til å organisere filer  
+- Hvordan laste opp filer til skyen  
+- Hvordan teste tilgang til filer via nettleser  
+- At Azure blokkerer offentlig tilgang som standard  
+
+---
+
+### Refleksjon
+Gjennom denne fasen har jeg fått en bedre forståelse av hvordan data kan lagres i skyen uavhengig av virtuelle maskiner. Jeg har også sett hvordan sikkerhetsinnstillinger påvirker tilgjengeligheten til filer, og hvordan disse må konfigureres riktig.
+
+Dette gir en praktisk forståelse av hvordan cloud storage fungerer i Azure.
